@@ -1,29 +1,69 @@
-<!-- Sidebar Start -->
-<div class="sidebar pe-4 pb-3">
-    <nav class="navbar bg-secondary navbar-dark">
-        <a href="index.html" class="navbar-brand mx-4 mb-3">
-            <h3 class="text-primary">FlipEco</h3>
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="mdi mdi-home menu-icon"></i>
+          <span class="menu-title">Dashboard</span>
         </a>
-        <div class="d-flex align-items-center ms-4 mb-4">
-            <div class="position-relative">
-                <img class="rounded-circle" src="{{ asset('assets/admin/img/user.jpg') }}" alt="" style="width: 40px; height: 40px;">
-                <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-            </div>
-            <div class="ms-3">
-                <h6 class="mb-0">Jhon Doe</h6>
-                <span>Admin</span>
-            </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <i class="mdi mdi-view-list menu-icon"></i>
+          <span class="menu-title">Categories</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="ui-basic">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{ route('admin.category.create') }}">Create Category</a></li>
+            <li class="nav-item"> <a class="nav-link" href="#">View Categories</a></li>
+          </ul>
         </div>
-        <div class="navbar-nav w-100">
-            <a href="{{ route('admin.dashboard') }}" wire:navigate class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-users me-2"></i>Users</a>
-                <div class="dropdown-menu bg-transparent border-0">
-                    <a href="#" class="dropdown-item">Create User</a>
-                    <a href="#" class="dropdown-item">Show Users</a>
-                </div>
-            </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pages/forms/basic_elements.html">
+          <i class="mdi mdi-view-headline menu-icon"></i>
+          <span class="menu-title">Form elements</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pages/charts/chartjs.html">
+          <i class="mdi mdi-chart-pie menu-icon"></i>
+          <span class="menu-title">Charts</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pages/tables/basic-table.html">
+          <i class="mdi mdi-grid-large menu-icon"></i>
+          <span class="menu-title">Tables</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pages/icons/mdi.html">
+          <i class="mdi mdi-emoticon menu-icon"></i>
+          <span class="menu-title">Icons</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+          <i class="mdi mdi-account menu-icon"></i>
+          <span class="menu-title">User Pages</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="auth">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Login 2 </a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/samples/register-2.html"> Register 2 </a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
+          </ul>
         </div>
-    </nav>
-</div>
-<!-- Sidebar End -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="documentation/documentation.html">
+          <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+          <span class="menu-title">Documentation</span>
+        </a>
+      </li>
+    </ul>
+</nav>

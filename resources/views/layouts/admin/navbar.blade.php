@@ -1,89 +1,143 @@
-<!-- Navbar Start -->
-<nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-    <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-        <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
-    </a>
-    <a href="#" class="sidebar-toggler flex-shrink-0">
-        <i class="fa fa-bars"></i>
-    </a>
-    <form class="d-none d-md-flex ms-4">
-        <input class="form-control bg-dark border-0" type="search" placeholder="Search">
-    </form>
-    <div class="navbar-nav align-items-center ms-auto">
-        <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <i class="fa fa-envelope me-lg-2"></i>
-                <span class="d-none d-lg-inline-flex">Message</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                <a href="#" class="dropdown-item">
-                    <div class="d-flex align-items-center">
-                        <img class="rounded-circle" src="{{ asset('assets/admin/img/user.jpg') }}" alt="" style="width: 40px; height: 40px;">
-                        <div class="ms-2">
-                            <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                            <small>15 minutes ago</small>
-                        </div>
-                    </div>
-                </a>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item">
-                    <div class="d-flex align-items-center">
-                        <img class="rounded-circle" src="{{ asset('assets/admin/img/user.jpg') }}" alt="" style="width: 40px; height: 40px;">
-                        <div class="ms-2">
-                            <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                            <small>15 minutes ago</small>
-                        </div>
-                    </div>
-                </a>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item">
-                    <div class="d-flex align-items-center">
-                        <img class="rounded-circle" src="{{ asset('assets/admin/img/user.jpg') }}" alt="" style="width: 40px; height: 40px;">
-                        <div class="ms-2">
-                            <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                            <small>15 minutes ago</small>
-                        </div>
-                    </div>
-                </a>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item text-center">See all message</a>
+<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <div class="navbar-brand-wrapper d-flex justify-content-center">
+        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
+        <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-sort-variant"></span>
+        </button>
+        </div>  
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <ul class="navbar-nav mr-lg-4 w-100">
+        <li class="nav-item nav-search d-none d-lg-block w-100">
+            <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="search">
+                <i class="mdi mdi-magnify"></i>
+                </span>
             </div>
-        </div>
-        <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <i class="fa fa-bell me-lg-2"></i>
-                <span class="d-none d-lg-inline-flex">Notificatin</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                <a href="#" class="dropdown-item">
-                    <h6 class="fw-normal mb-0">Profile updated</h6>
-                    <small>15 minutes ago</small>
-                </a>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item">
-                    <h6 class="fw-normal mb-0">New user added</h6>
-                    <small>15 minutes ago</small>
-                </a>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item">
-                    <h6 class="fw-normal mb-0">Password changed</h6>
-                    <small>15 minutes ago</small>
-                </a>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item text-center">See all notifications</a>
+            <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
             </div>
-        </div>
-        <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <img class="rounded-circle me-lg-2" src="{{ asset('assets/admin/img/user.jpg') }}" alt="" style="width: 40px; height: 40px;">
-                <span class="d-none d-lg-inline-flex">John Doe</span>
+        </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+        <li class="nav-item dropdown me-1">
+            <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-bs-toggle="dropdown">
+            <i class="mdi mdi-message-text mx-0"></i>
+            <span class="count"></span>
             </a>
-            <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                <a href="#" class="dropdown-item">My Profile</a>
-                <a href="#" class="dropdown-item">Settings</a>
-                <a href="#" class="dropdown-item">Log Out</a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
+            <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
+            <a class="dropdown-item">
+                <div class="item-thumbnail">
+                    <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="item-content flex-grow">
+                <h6 class="ellipsis font-weight-normal">David Grey
+                </h6>
+                <p class="font-weight-light small-text text-muted mb-0">
+                    The meeting is cancelled
+                </p>
+                </div>
+            </a>
+            <a class="dropdown-item">
+                <div class="item-thumbnail">
+                    <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="item-content flex-grow">
+                <h6 class="ellipsis font-weight-normal">Tim Cook
+                </h6>
+                <p class="font-weight-light small-text text-muted mb-0">
+                    New product launch
+                </p>
+                </div>
+            </a>
+            <a class="dropdown-item">
+                <div class="item-thumbnail">
+                    <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="item-content flex-grow">
+                <h6 class="ellipsis font-weight-normal"> Johnson
+                </h6>
+                <p class="font-weight-light small-text text-muted mb-0">
+                    Upcoming board meeting
+                </p>
+                </div>
+            </a>
             </div>
-        </div>
+        </li>
+        <li class="nav-item dropdown me-4">
+            <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
+            <i class="mdi mdi-bell mx-0"></i>
+            <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
+            <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+            <a class="dropdown-item">
+                <div class="item-thumbnail">
+                <div class="item-icon bg-success">
+                    <i class="mdi mdi-information mx-0"></i>
+                </div>
+                </div>
+                <div class="item-content">
+                <h6 class="font-weight-normal">Application Error</h6>
+                <p class="font-weight-light small-text mb-0 text-muted">
+                    Just now
+                </p>
+                </div>
+            </a>
+            <a class="dropdown-item">
+                <div class="item-thumbnail">
+                <div class="item-icon bg-warning">
+                    <i class="mdi mdi-settings mx-0"></i>
+                </div>
+                </div>
+                <div class="item-content">
+                <h6 class="font-weight-normal">Settings</h6>
+                <p class="font-weight-light small-text mb-0 text-muted">
+                    Private message
+                </p>
+                </div>
+            </a>
+            <a class="dropdown-item">
+                <div class="item-thumbnail">
+                <div class="item-icon bg-info">
+                    <i class="mdi mdi-account-box mx-0"></i>
+                </div>
+                </div>
+                <div class="item-content">
+                <h6 class="font-weight-normal">New user registration</h6>
+                <p class="font-weight-light small-text mb-0 text-muted">
+                    2 days ago
+                </p>
+                </div>
+            </a>
+            </div>
+        </li>
+        <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
+            <img src="images/faces/face5.jpg" alt="profile"/>
+            <span class="nav-profile-name">Louis Barnett</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+            <a class="dropdown-item">
+                <i class="mdi mdi-settings text-primary"></i>
+                Settings
+            </a>
+            <!-- Authentication -->
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <a class="dropdown-item" href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
+                    <i class="mdi mdi-logout text-primary"></i>
+                    {{ __('Logout') }}
+                </a>
+            </form>
+            </div>
+        </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+        <span class="mdi mdi-menu"></span>
+        </button>
     </div>
 </nav>
-<!-- Navbar End -->
