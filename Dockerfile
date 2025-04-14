@@ -55,7 +55,7 @@ RUN echo "==> Create Sqlite File:" && touch /var/www/database/database.sqlite
 RUN echo "==> Migrating Database:" && php artisan migrate --force
 
 # Expose port 9000 and start the PHP server
-EXPOSE 80
+EXPOSE 8080
 CMD ["php-fpm"]
 
 # Check where is installed nginx
@@ -88,16 +88,16 @@ USER root
 RUN echo "==> Test Nginx Configuration:" && nginx -t
 
 # Start Nginx and PHP-FPM using a supervisor-like approach
-# CMD ["sh", "-c", "service nginx start && php-fpm"]
+CMD ["sh", "-c", "service nginx start && php-fpm"]
 
 # Use a script or supervisor to run both Nginx and PHP-FPM
-# CMD ["sh", "-c", "php-fpm & nginx -g 'daemon off;'"]
+CMD ["sh", "-c", "php-fpm & nginx -g 'daemon off;'"]
 
 # Install supervisord
-#RUN apt-get update && apt-get install -y supervisor && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y supervisor && rm -rf /var/lib/apt/lists/*
 
 # Copy supervisord configuration
-#COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # CMD to run supervisord
-#CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
