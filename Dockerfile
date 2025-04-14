@@ -94,10 +94,10 @@ RUN echo "==> Test Nginx Configuration:" && nginx -t
 # CMD ["sh", "-c", "php-fpm & nginx -g 'daemon off;'"]
 
 # Install supervisord
-RUN apt-get update && apt-get install -y supervisor && rm -rf /var/lib/apt/lists/*
+#RUN apt-get update && apt-get install -y supervisor && rm -rf /var/lib/apt/lists/*
 
 # Copy supervisord configuration
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+#COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # CMD to run supervisord
-CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+#CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
