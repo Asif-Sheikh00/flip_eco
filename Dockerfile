@@ -55,7 +55,7 @@ RUN echo "==> Create Sqlite File:" && touch /var/www/database/database.sqlite
 RUN echo "==> Migrating Database:" && php artisan migrate --force
 
 # Expose port 9000 and start the PHP server
-EXPOSE 8080
+EXPOSE 80
 CMD ["php-fpm"]
 
 # Check where is installed nginx
